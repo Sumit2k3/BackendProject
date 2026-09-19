@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 	
 	@RequestMapping("/")
-	@ResponseBody
 	public String greet() {
-		return "Hi";
+		return "welcome";
 	}
 	
 	@RequestMapping("/movies")
-	@ResponseBody
 	public String movie() {
-		return "Hi";
+		return "netflix";
 	
 	}
 }
