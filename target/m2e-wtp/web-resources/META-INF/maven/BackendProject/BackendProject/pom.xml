@@ -6,6 +6,8 @@
   <packaging>war</packaging>
   
   <dependencies><!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+  
+  	<!-- Spring MVC -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-webmvc</artifactId>
@@ -13,6 +15,7 @@
 	    <scope>compile</scope>
 	</dependency>
 	
+	<!-- Spring MVC -->
 	<dependency>
 		<groupId>jakarta.servlet.jsp</groupId>
 		<artifactId>jakarta.servlet.jsp-api</artifactId>
