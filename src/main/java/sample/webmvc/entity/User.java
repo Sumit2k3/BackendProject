@@ -1,17 +1,7 @@
 package sample.webmvc.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
 public class User {
 	
-	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String name, gender, address;
@@ -20,8 +10,9 @@ public class User {
 		super();
 	}
 
-	public User(String name, String gender, String address) {
+	public User(int id, String name, String gender, String address) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		this.address = address;
