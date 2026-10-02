@@ -15,7 +15,7 @@ public class UserDao {
 
 	@Transactional
 	public void saveUser(User user) {
-		sessionFactory.getCurrentSession().persist(user);
+		sessionFactory.openSession().persist(user);
 		System.out.println("UserDao.saveUser()");
 	}
 
