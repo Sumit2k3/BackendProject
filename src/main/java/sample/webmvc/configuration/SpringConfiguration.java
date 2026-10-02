@@ -63,11 +63,4 @@ public class SpringConfiguration implements WebMvcConfigurer{
 		return viewResolver;
 	}
 	
-	// Serve static images 
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
-        registry.addResourceHandler("/images/**")
-                .addResourceLocations("/images/");
-    }
-
 }

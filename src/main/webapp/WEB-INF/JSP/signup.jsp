@@ -4,191 +4,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Sign Up</title>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
 
-<style>
-    * {
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
 
-    body {
-    margin: 0;
-    min-height: 100vh;
+        .signup-form {
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        h2 {
+            text-align: center;
+        }
 
-    background-image: url("${pageContext.request.contextPath}/images/signup-bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-	}
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-    .signup-box {
-        width: 380px;
-        background: white;
-        padding: 35px 40px;
-        border: 2px solid #222;
-        box-shadow: 10px 10px 0px #9aa9b5;
-    }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
 
-    .signup-box h1 {
-        text-align: center;
-        margin: 0 0 10px;
-        font-size: 28px;
-        font-weight: bold;
-    }
+        .gender {
+            margin-top: 8px;
+        }
 
-    .signup-box p {
-        text-align: center;
-        color: #555;
-        margin-bottom: 25px;
-    }
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
-
-    input[type="text"],
-    textarea,
-    select {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-bottom: 2px solid #bbb;
-        outline: none;
-        font-size: 15px;
-    }
-
-    input[type="text"]:focus,
-    textarea:focus,
-    select:focus {
-        border-bottom: 2px solid #222;
-    }
-
-    textarea {
-        height: 80px;
-        resize: none;
-        border: 2px solid #bbb;
-    }
-
-    .gender {
-        display: flex;
-        gap: 25px;
-        margin-top: 10px;
-    }
-
-    .gender label {
-        font-weight: normal;
-        display: inline;
-    }
-
-    .gender input {
-        margin-right: 5px;
-    }
-
-    .signup-btn {
-        width: 100%;
-        padding: 12px;
-        margin-top: 10px;
-        background: white;
-        border: 2px solid #222;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .signup-btn:hover {
-        background: #222;
-        color: white;
-    }
-
-    .close-btn {
-        text-align: right;
-        color: #999;
-        font-size: 20px;
-        margin-bottom: 5px;
-    }
-</style>
-
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="signup-box">
+    <div class="signup-form">
 
-        <div class="close-btn">×</div>
+        <h2>Sign Up</h2>
 
-        <h1>Sign Up</h1>
-
-        <p>Enter your details to create an account.</p>
-
-        <form action="${pageContext.request.contextPath}/sign-up" method="post">
-
+<form action="${pageContext.request.contextPath}/sign-up"
+          method="post">
             <!-- Name -->
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text"
-                       id="name"
-                       name="name"
-                       placeholder="Your name"
-                       required>
-            </div>
+            <label for="name">Name:</label>
+            <input type="text"
+                   id="name"
+                   name="name"
+                   placeholder="Enter your name"
+                   required>
 
             <!-- Gender -->
-            <div class="form-group">
-                <label>Gender</label>
+            <label>Gender:</label>
 
-                <div class="gender">
-                    <span>
-                        <input type="radio"
-                               id="male"
-                               name="gender"
-                               value="Male"
-                               required>
-                        <label for="male">Male</label>
-                    </span>
+            <div class="gender">
+                <input type="radio"
+                       id="male"
+                       name="gender"
+                       value="Male"
+                       required>
+                <label for="male">Male</label>
 
-                    <span>
-                        <input type="radio"
-                               id="female"
-                               name="gender"
-                               value="Female">
-                        <label for="female">Female</label>
-                    </span>
+                <input type="radio"
+                       id="female"
+                       name="gender"
+                       value="Female">
+                <label for="female">Female</label>
 
-                    <span>
-                        <input type="radio"
-                               id="other"
-                               name="gender"
-                               value="Other">
-                        <label for="other">Other</label>
-                    </span>
-                </div>
+                <input type="radio"
+                       id="other"
+                       name="gender"
+                       value="Other">
+                <label for="other">Other</label>
             </div>
 
             <!-- Address -->
-            <div class="form-group">
-                <label for="address">Address</label>
-                <textarea id="address"
-                          name="address"
-                          placeholder="Enter your address"
-                          required></textarea>
-            </div>
+            <label for="address">Address:</label>
+            <textarea id="address"
+                      name="address"
+                      rows="4"
+                      placeholder="Enter your address"
+                      required></textarea>
 
             <!-- Submit -->
-            <button type="submit" class="signup-btn">
-                SIGN UP
-            </button>
+            <input type="submit" value="Sign Up">
 
         </form>
 
